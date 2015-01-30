@@ -1,0 +1,9 @@
+Package: trees
+Type: Package
+Title: General horticulture
+Version: 1.0
+Date: 2015-01-30
+Author: Who wrote it
+Maintainer: John Baumgartner <johnbaums@gmail.com>
+Description: Design random trees. Grow them. Plot them.
+License: Copyright Triple Plus

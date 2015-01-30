@@ -85,7 +85,7 @@ germinate <- function(seed, angle=20, trunk.width=20, left='L', right='R',
              data.frame(branches=seed$branches, 
                         depth=ifelse(seed$branches==0, 0, nchar(seed$branches)),
                         length=seed$lengths,
-                        seed$angles, x0, y0, x1, y1,
+                        angles=seed$angles, x0, y0, x1, y1,
                         stringsAsFactors=FALSE))
   class(d) <- c('seedling', 'data.frame')
   if(isTRUE(plot)) plot(d, trunk.width=trunk.width, ...)

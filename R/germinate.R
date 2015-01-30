@@ -3,18 +3,19 @@
 #'Observe the miracle of life as your seed germinates and spews forth a glorious
 #'tree.
 #'
-#'@param seed A named \code{list} containing:
+#'@param seed A named \code{list} containing: 
 #'  \describe{\item{\code{trunk.height}}{Exactly how glorious will this tree 
-#'  be?} \item{\code{branches}}{A binary coded vector of addresses of branches to be
-#'  included. Branches can branch to the left or the right from the end of the
-#'  trunk, or from the end of another branch included in \code{branches}. Elements of
-#'  \code{branches} may only contain the characters given in args \code{left} and \code{right},
-#'  and all parent branches of each element must also be provided. E.g. \code{'L'} is
-#'  the first branch to the left stemming from the top of the trunk, while \code{'R'}
-#'  is the first branch to the right, stemming from the top of the trunk; \code{'LR'}
-#'  would be a branch forking to the right from the end of the first branch that
-#'  forked left off the trunk.} \item{\code{lengths}}{A vector of branch lengths
-#'  corresponding to the elements of \code{branches}. Should be the same length as
+#'  be?} \item{\code{branches}}{A binary coded vector of addresses of branches 
+#'  to be included. Branches can branch to the left or the right from the end of
+#'  the trunk, or from the end of another branch included in \code{branches}. 
+#'  Elements of \code{branches} may only contain the characters given in args 
+#'  \code{left} and \code{right}, and all parent branches of each element must 
+#'  also be provided. E.g. \code{'L'} is the first branch to the left stemming 
+#'  from the top of the trunk, while \code{'R'} is the first branch to the 
+#'  right, stemming from the top of the trunk; \code{'LR'} would be a branch 
+#'  forking to the right from the end of the first branch that forked left off 
+#'  the trunk.} \item{\code{lengths}}{A vector of branch lengths corresponding 
+#'  to the elements of \code{branches}. Should be the same length as 
 #'  \code{branches}.}}
 #'@param angle The angle of branches relative to their parent branch (or 
 #'  relative to the trunk). This angle is negated for left-pointing branches.
@@ -25,10 +26,10 @@
 #'@param right The character used to represent right-turning branches in the 
 #'  \code{branches} vector (default is \code{'R'}). This must not be \code{'L'}.
 #'@param plot Should the tree be plotted? (logical).
-#'@param ... Further arguments to \code{\link{plot.seedling}}.
-#'@return a \code{seedling} object, which is a \code{data.frame} comprising branch 
+#'@param ... Further arguments to \code{plot.plant}.
+#'@return a \code{plant} object, which is a \code{data.frame} comprising branch 
 #'  addresses, depths, lengths, angles, base coordinates, and tip coordinates.
-#'@seealso \code{\link{seed}}
+#'@seealso \code{\link{seed}} \code{\link{foliate}}
 #'@export
 #'@examples
 #' 
@@ -44,7 +45,12 @@
 #'              min.trunk.height=3, max.trunk.height=5)
 #' germinate(s, trunk.width=15)
 #' 
-#' # In addition to the mighty oak above, you might also like to germinate a 
+#' # Additional realism (hard to imagine!) is possible by actually plotting the 
+#' #  trees in a browny colour...
+#' germinate(s, trunk.width=15, col='peachpuff4')
+#' # (Pro-tip: see ?foliate for more realism)
+#' 
+#' # In addition to the mighty oaks above, you might also like to germinate a 
 #' #  clumpy grassy-type thing
 #' s <- seed(60, 15, min.branch.length=0, max.branch.length=5, 
 #'              min.trunk.height=0, max.trunk.height=0)
@@ -87,7 +93,7 @@ germinate <- function(seed, angle=20, trunk.width=20, left='L', right='R',
                         length=seed$lengths,
                         angles=seed$angles, x0, y0, x1, y1,
                         stringsAsFactors=FALSE))
-  class(d) <- c('seedling', 'data.frame')
+  class(d) <- c('plant', 'data.frame')
   if(isTRUE(plot)) plot(d, trunk.width=trunk.width, ...)
   return(d)
 }

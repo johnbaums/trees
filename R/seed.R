@@ -21,7 +21,6 @@
 #'          min.trunk.height=5, max.trunk.height=8)
 #'          
 #' s
- 
 seed <- function(n, max.depth, min.trunk.height=10, max.trunk.height=30, 
                  min.branch.length=3, max.branch.length=10) {
   if(min.branch.length > max.branch.length) 

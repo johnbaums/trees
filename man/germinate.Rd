@@ -10,16 +10,17 @@ germinate(seed, angle = 20, trunk.width = 20, left = "L", right = "R",
 \arguments{
 \item{seed}{A named \code{list} containing:
 \describe{\item{\code{trunk.height}}{Exactly how glorious will this tree
-be?} \item{\code{branches}}{A binary coded vector of addresses of branches to be
-included. Branches can branch to the left or the right from the end of the
-trunk, or from the end of another branch included in \code{branches}. Elements of
-\code{branches} may only contain the characters given in args \code{left} and \code{right},
-and all parent branches of each element must also be provided. E.g. \code{'L'} is
-the first branch to the left stemming from the top of the trunk, while \code{'R'}
-is the first branch to the right, stemming from the top of the trunk; \code{'LR'}
-would be a branch forking to the right from the end of the first branch that
-forked left off the trunk.} \item{\code{lengths}}{A vector of branch lengths
-corresponding to the elements of \code{branches}. Should be the same length as
+be?} \item{\code{branches}}{A binary coded vector of addresses of branches
+to be included. Branches can branch to the left or the right from the end of
+the trunk, or from the end of another branch included in \code{branches}.
+Elements of \code{branches} may only contain the characters given in args
+\code{left} and \code{right}, and all parent branches of each element must
+also be provided. E.g. \code{'L'} is the first branch to the left stemming
+from the top of the trunk, while \code{'R'} is the first branch to the
+right, stemming from the top of the trunk; \code{'LR'} would be a branch
+forking to the right from the end of the first branch that forked left off
+the trunk.} \item{\code{lengths}}{A vector of branch lengths corresponding
+to the elements of \code{branches}. Should be the same length as
 \code{branches}.}}}
 
 \item{angle}{The angle of branches relative to their parent branch (or
@@ -36,10 +37,10 @@ for successive child branches, to a minimum of 1.}
 
 \item{plot}{Should the tree be plotted? (logical).}
 
-\item{...}{Further arguments to \code{\link{plot.seedling}}.}
+\item{...}{Further arguments to \code{plot.plant}.}
 }
 \value{
-a \code{seedling} object, which is a \code{data.frame} comprising branch
+a \code{plant} object, which is a \code{data.frame} comprising branch
  addresses, depths, lengths, angles, base coordinates, and tip coordinates.
 }
 \description{
@@ -59,13 +60,18 @@ s <- seed(50, 10, min.branch.length=0, max.branch.length=5,
              min.trunk.height=3, max.trunk.height=5)
 germinate(s, trunk.width=15)
 
-# In addition to the mighty oak above, you might also like to germinate a
+# Additional realism (hard to imagine!) is possible by actually plotting the
+#  trees in a browny colour...
+germinate(s, trunk.width=15, col='peachpuff4')
+# (Pro-tip: see ?foliate for more realism)
+
+# In addition to the mighty oaks above, you might also like to germinate a
 #  clumpy grassy-type thing
 s <- seed(60, 15, min.branch.length=0, max.branch.length=5,
              min.trunk.height=0, max.trunk.height=0)
 germinate(s, angle=5, trunk.width=10)
 }
 \seealso{
-\code{\link{seed}}
+\code{\link{seed}} \code{\link{foliate}}
 }
 

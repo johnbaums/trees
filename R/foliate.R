@@ -1,4 +1,4 @@
-#'Stick things on sticks
+#'Stick things on sticks.
 #'
 #'Spring has sprung. Trees look dead if they don't have leaves, so enfoliate 
 #'them. Or, if you prefer, add squirrels and or nuts.
@@ -10,11 +10,16 @@
 #'@param max.depth The tier of branches above which things will not be stuck to 
 #'  branches. If not provided, \code{max.depth} will be set to the outermost 
 #'  tier of branches.
+#'@param xy Should the coordinates of the random leaves be returned?
+#'@param plot Should the leaves be added to the existing plot?
 #'@param ... Additional arguments passed to \code{points}.
-#'@return Nothing is returned. Rather, \code{foliate} is designed to be called 
-#'  after a \code{plant} has been plotted, and will add randomly located points
-#'  to the plot with the desired \code{\link{pch}}, colour, size etc.
-#'@seealso \code{\link{germinate}}
+#'@return If \code{xy} is \code{TRUE}, a \code{data.frame} containing the branch
+#'  addresses (\code{branches}), positions (\code{pos}), and coordinates of
+#'  leaves. Additionally, if \code{plot} is \code{TRUE}, randomly located points
+#'  will be added to the current plot with the desired \code{\link{pch}},
+#'  colour, size etc. (e.g. call \code{foliate} after a \code{plant} has been
+#'  plotted).
+#'@seealso \code{\link{germinate}} \code{\link{squirrels}}
 #'@export
 #'@examples
 #' # Make a seed
@@ -29,12 +34,29 @@
 #' foliate(g, 2000, 4, pch=24:25, col=NA, cex=1.2, bg=paste0(leafygreens, '50'))
 #' 
 #' # Or add some cherry blossoms
-#' g <- germinate(s, trunk.width=15, col='burlywood4')      
+#' plot(g, trunk.width=15, col='burlywood4')      
 #' floralpinks <- colorRampPalette(c('mistyrose', 'hotpink'))(30)
 #' foliate(g, 3000, 4, pch=24:25, cex=1.5, bg=paste0(floralpinks, '20'), col=NA)
-foliate <- function(x, n, min.depth=3, max.depth, ...) {
-  b <- x[sample(which(x$depth >= min.depth), n, replace=TRUE), ]
-  if(missing(max.depth)) max.depth <- max(b$depth)
-  leaves <- get.xy(b$angles, runif(n, 0, b$length), b$x0, b$y0)
-  points(leaves, ...)
+#' 
+#' # Plant a fandom forest
+#' png(f <- tempfile(fileext='.png'), 700, 600, type='cairo')
+#' leafygreens <- colorRampPalette(paste0('darkolivegreen', c('', 1:4)))(100)
+#' par(mfrow=c(5, 5), mar=rep(0, 4), oma=c(0, 0, 6, 0))
+#' replicate(25, {
+#'   s <- seed(50, 10, min.branch.length=0, max.branch.length=5, 
+#'             min.trunk.height=2, max.trunk.height=5)
+#'   g <- germinate(s, angle=20, trunk.width=5, col='peachpuff4')
+#'   foliate(g, 1000, pch=24:25, col=NA, cex=1.2, bg=paste0(leafygreens, '20'))
+#' })
+#' mtext('A random forest', 3, 3, TRUE, font=2, cex=2)
+#' dev.off()
+#' file.show(f)
+foliate <- function(x, n, min.depth=3, max.depth, xy=FALSE, plot=TRUE, ...) {
+  if(missing(max.depth)) max.depth <- max(x$depth)
+  b <- x[sample(which(x$depth >= min.depth & x$depth <= max.depth), n, 
+                replace=TRUE), ]
+  pos <- runif(n, 0, b$length)
+  leaves <- get.xy(b$angles, pos, b$x0, b$y0)
+  if(isTRUE(plot)) points(leaves, ...)
+  if(isTRUE(xy)) return(cbind(branches=b$branches, pos=pos, leaves))
 }

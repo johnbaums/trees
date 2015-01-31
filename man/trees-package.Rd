@@ -16,7 +16,7 @@ Version: \tab 1.0\cr
 Date: \tab 2015-01-30\cr
 License: \tab Copyright Super-plus\cr
 }
-Take a look at \code{\link{seed}}, \code{\link{germinate}}, and \code{\link{foliate}}.
+Take a look at \code{\link{seed}}, \code{\link{germinate}}, \code{\link{prune}}, and \code{\link{foliate}}.
 }
 \author{
 John Baumgartner

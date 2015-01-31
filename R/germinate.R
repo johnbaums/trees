@@ -29,7 +29,7 @@
 #'@param ... Further arguments to \code{plot.plant}.
 #'@return a \code{plant} object, which is a \code{data.frame} comprising branch 
 #'  addresses, depths, lengths, angles, base coordinates, and tip coordinates.
-#'@seealso \code{\link{seed}} \code{\link{foliate}}
+#'@seealso \code{\link{seed}} \code{\link{foliate}} \code{\link{prune}}
 #'@export
 #'@examples
 #' 

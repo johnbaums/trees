@@ -33,7 +33,7 @@
 #' floralpinks <- colorRampPalette(c('mistyrose', 'hotpink'))(30)
 #' foliate(g, 3000, 4, pch=24:25, cex=1.5, bg=paste0(floralpinks, '20'), col=NA)
 foliate <- function(x, n, min.depth=3, max.depth, ...) {
-  b <- x[sample(which(x$depth > min.depth), n, replace=TRUE), ]
+  b <- x[sample(which(x$depth >= min.depth), n, replace=TRUE), ]
   if(missing(max.depth)) max.depth <- max(b$depth)
   leaves <- get.xy(b$angles, runif(n, 0, b$length), b$x0, b$y0)
   points(leaves, ...)

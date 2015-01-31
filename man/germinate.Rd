@@ -72,6 +72,6 @@ s <- seed(60, 15, min.branch.length=0, max.branch.length=5,
 germinate(s, angle=5, trunk.width=10)
 }
 \seealso{
-\code{\link{seed}} \code{\link{foliate}}
+\code{\link{seed}} \code{\link{foliate}} \code{\link{prune}}
 }
 

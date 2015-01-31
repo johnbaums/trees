@@ -2,26 +2,26 @@
 % Please edit documentation in R/germinate.R
 \name{germinate}
 \alias{germinate}
-\title{Germinate a seed}
+\title{Germinate a seed.}
 \usage{
-germinate(seed, angle = 20, trunk.width = 20, left = "L", right = "R",
+germinate(x, angle = 20, trunk.width = 20, left = "L", right = "R",
   plot = TRUE, ...)
 }
 \arguments{
-\item{seed}{A named \code{list} containing:
-\describe{\item{\code{trunk.height}}{Exactly how glorious will this tree
-be?} \item{\code{branches}}{A binary coded vector of addresses of branches
-to be included. Branches can branch to the left or the right from the end of
-the trunk, or from the end of another branch included in \code{branches}.
-Elements of \code{branches} may only contain the characters given in args
-\code{left} and \code{right}, and all parent branches of each element must
-also be provided. E.g. \code{'L'} is the first branch to the left stemming
-from the top of the trunk, while \code{'R'} is the first branch to the
-right, stemming from the top of the trunk; \code{'LR'} would be a branch
-forking to the right from the end of the first branch that forked left off
-the trunk.} \item{\code{lengths}}{A vector of branch lengths corresponding
-to the elements of \code{branches}. Should be the same length as
-\code{branches}.}}}
+\item{x}{Either a \code{seed} object returned by \code{\link{seed}}, or a
+named \code{list} containing: \describe{\item{\code{trunk.height}}{Exactly
+how glorious will this tree be?} \item{\code{branches}}{A binary coded
+vector of addresses of branches to be included. Branches can branch to the
+left or the right from the end of the trunk, or from the end of another
+branch included in \code{branches}. Elements of \code{branches} may only
+contain the characters given in args \code{left} and \code{right}, and all
+parent branches of each element must also be provided. E.g. \code{'L'} is
+the first branch to the left stemming from the top of the trunk, while
+\code{'R'} is the first branch to the right, stemming from the top of the
+trunk; \code{'LR'} would be a branch forking to the right from the end of
+the first branch that forked left off the trunk.} \item{\code{lengths}}{A
+vector of branch lengths corresponding to the elements of \code{branches}.
+Should be the same length as \code{branches}.}}}
 
 \item{angle}{The angle of branches relative to their parent branch (or
 relative to the trunk). This angle is negated for left-pointing branches.}
@@ -53,23 +53,23 @@ tree.
 germinate(list(trunk.height=32,
                branches=c(1,2,11,12,121, 122),
                lengths=c(21, 19, 5, 12, 6, 2)),
-          left='1', right='2')
+          left='1', right='2', angle=40)
 
 # Or simulate a seed and pass it directly to germinate
 s <- seed(50, 10, min.branch.length=0, max.branch.length=5,
              min.trunk.height=3, max.trunk.height=5)
-germinate(s, trunk.width=15)
+g <- germinate(s, trunk.width=15)
 
 # Additional realism (hard to imagine!) is possible by actually plotting the
 #  trees in a browny colour...
-germinate(s, trunk.width=15, col='peachpuff4')
+plot(g, trunk.width=15, col='peachpuff4')
 # (Pro-tip: see ?foliate for more realism)
 
 # In addition to the mighty oaks above, you might also like to germinate a
 #  clumpy grassy-type thing
 s <- seed(60, 15, min.branch.length=0, max.branch.length=5,
              min.trunk.height=0, max.trunk.height=0)
-germinate(s, angle=5, trunk.width=10)
+g <- germinate(s, angle=5, trunk.width=10)
 }
 \seealso{
 \code{\link{seed}} \code{\link{foliate}} \code{\link{prune}}

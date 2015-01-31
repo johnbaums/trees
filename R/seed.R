@@ -1,4 +1,4 @@
-#'Random seeds
+#'Generate random seeds.
 #'
 #'Generate a random seed whose DNA will shape its development upon germination.
 #'
@@ -20,7 +20,7 @@
 #' s <- seed(50, 10, min.branch.length=0, max.branch.length=5, 
 #'          min.trunk.height=5, max.trunk.height=8)
 #'          
-#' s
+#' head(s)
 seed <- function(n, max.depth, min.trunk.height=10, max.trunk.height=30, 
                  min.branch.length=3, max.branch.length=10) {
   if(min.branch.length > max.branch.length) 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/seed.R
 \name{seed}
 \alias{seed}
-\title{Random seeds}
+\title{Generate random seeds.}
 \usage{
 seed(n, max.depth, min.trunk.height = 10, max.trunk.height = 30,
   min.branch.length = 3, max.branch.length = 10)
@@ -34,7 +34,7 @@ Generate a random seed whose DNA will shape its development upon germination.
 s <- seed(50, 10, min.branch.length=0, max.branch.length=5,
          min.trunk.height=5, max.trunk.height=8)
 
-s
+head(s)
 }
 \seealso{
 \code{\link{germinate}}

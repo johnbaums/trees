@@ -66,8 +66,8 @@ germinate <- function(x, angle=20, trunk.width=20, left='L', right='R',
     stop('left and right must be a single alphanumeric character.')
   if (grepl('L', right)) 
     stop('right must not contain "L".')
-  x$branches <- sort(x$branches)
   x$lengths <- x$lengths[order(x$branches)]
+  x$branches <- sort(x$branches)
   x$branches <- gsub(left, 'L', x$branches)
   x$branches <- gsub(right, 'R', x$branches)
   x$angles <- sapply(gsub('R', paste0('+', angle), 

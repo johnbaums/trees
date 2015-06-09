@@ -1,9 +1,17 @@
 Package: trees
 Type: Package
-Title: General horticulture
-Version: 1.0
-Date: 2015-01-30
-Author: Who wrote it
-Maintainer: John Baumgartner <johnbaums@gmail.com>
-Description: Design random trees. Grow them. Plot them.
-License: Copyright Triple Plus
+Title: Generation and Plotting of Tree Structures
+Version: 0.1.1.9000
+Date: 2015-06-01
+Authors@R: person("John", "Baumgartner", email = "johnbaums@gmail.com",
+                  role = c("aut", "cre"))
+Description: Generate and manipulate tree plots. Predefined tree structures can 
+    be plotted, or random structures can be generated. Trees can be pruned to 
+    remove one or more tiers of outer branches, and symbols can be plotted at 
+    specified or randomly chosen coordinates along branches. Trees can be 
+    plotted to represent hierarchical structures (e.g. dendrograms), or can 
+    mimic trees (the things with trunks, branches and leaves) in nature.
+Depends: R (>= 3.2.0)
+License: GPL-3
+URL: https://github.com/johnbaums/trees
+BugReports: https://github.com/johnbaums/trees/issues

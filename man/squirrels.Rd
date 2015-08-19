@@ -37,9 +37,9 @@ example), passed to \code{points}.}
 }
 \value{
 A \code{data.frame} with branch addresses (\code{branches}), squirrel
- positions (\code{pos}), and the corresponding \code{x} and \code{y}
- coordinates. If \code{plot} is \code{TRUE}, the points will be added to the
- current plot.
+  positions (\code{pos}), and the corresponding \code{x} and \code{y}
+  coordinates. If \code{plot} is \code{TRUE}, the points will be added to the
+  current plot.
 }
 \description{
 Add squirrels (for example) at specific locations defined by branch address

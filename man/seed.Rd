@@ -38,7 +38,7 @@ head(s)
 }
 \references{
 Random sampling of branch tips uses an approach described by
-  Stack Overflow user @brodieG posted
+  Stack Overflow user @BrodieG (Brodie Gaslam) posted
   \href{http://stackoverflow.com/a/30781090/489704}{here} and available as a
   Gist \href{https://gist.github.com/brodieG/7fecc0dcbc0cfa53a76a}{here}.
 }

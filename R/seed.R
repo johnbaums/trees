@@ -14,7 +14,7 @@
 #' @return a \code{seed} object containing \code{branches} and \code{lengths}, 
 #'   and suitable for input to \code{\link{germinate}}.
 #' @references Random sampling of branch tips uses an approach described by 
-#'   Stack Overflow user @@brodieG (Brodie Gaslam) posted 
+#'   Stack Overflow user @@BrodieG (Brodie Gaslam) posted 
 #'   \href{http://stackoverflow.com/a/30781090/489704}{here} and available as a 
 #'   Gist \href{https://gist.github.com/brodieG/7fecc0dcbc0cfa53a76a}{here}.
 #' @seealso \code{\link{germinate}}

@@ -26,11 +26,11 @@ tier of branches.}
 }
 \value{
 If \code{xy} is \code{TRUE}, a \code{data.frame} containing the branch
- addresses (\code{branches}), positions (\code{pos}), and coordinates of
- leaves. Additionally, if \code{plot} is \code{TRUE}, randomly located points
- will be added to the current plot with the desired \code{\link{pch}},
- colour, size etc. (e.g. call \code{foliate} after a \code{plant} has been
- plotted).
+  addresses (\code{branches}), positions (\code{pos}), and coordinates of
+  leaves. Additionally, if \code{plot} is \code{TRUE}, randomly located points
+  will be added to the current plot with the desired \code{\link{pch}},
+  colour, size etc. (e.g. call \code{foliate} after a \code{plant} has been
+  plotted).
 }
 \description{
 Spring has sprung. Trees look dead if they don't have leaves, so enfoliate

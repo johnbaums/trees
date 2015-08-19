@@ -15,7 +15,7 @@ prune(x, intensity = 1, plot = TRUE, ...)
 }
 \value{
 a modified \code{plant} object with the outermost \code{intensity}
- stems hacked off.
+  stems hacked off.
 }
 \description{
 If your plant is out of control and you have a bit of time on the weekend, get

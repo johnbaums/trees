@@ -42,7 +42,7 @@ for successive child branches, to a minimum of 1.}
 }
 \value{
 a \code{plant} object, which is a \code{data.frame} comprising branch
- addresses, depths, lengths, angles, base coordinates, and tip coordinates.
+  addresses, depths, lengths, angles, base coordinates, and tip coordinates.
 }
 \description{
 Observe the miracle of life as your seed germinates and spews forth a glorious

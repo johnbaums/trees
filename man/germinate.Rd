@@ -4,7 +4,7 @@
 \alias{germinate}
 \title{Germinate a seed.}
 \usage{
-germinate(x, angle = 20, trunk.width = 20, left = "L", right = "R",
+germinate(x, angle = 20, trunk.width = 20, left = "0", right = "1",
   plot = TRUE, ...)
 }
 \arguments{
@@ -15,13 +15,14 @@ vector of addresses of branches to be included. Branches can branch to the
 left or the right from the end of the trunk, or from the end of another
 branch included in \code{branches}. Elements of \code{branches} may only
 contain the characters given in args \code{left} and \code{right}, and all
-parent branches of each element must also be provided. E.g. \code{'L'} is
-the first branch to the left stemming from the top of the trunk, while
-\code{'R'} is the first branch to the right, stemming from the top of the
-trunk; \code{'LR'} would be a branch forking to the right from the end of
-the first branch that forked left off the trunk.} \item{\code{lengths}}{A
-vector of branch lengths corresponding to the elements of \code{branches}.
-Should be the same length as \code{branches}.}}}
+parent branches of each element must also be provided. E.g. if \code{left}
+and \code{right} are \code{'0'} and \code{'1'}, respectively, then
+\code{'0'} is the first branch to the left stemming from the top of the
+trunk, while \code{'1'} is the first branch to the right, stemming from the
+top of the trunk; \code{'01'} would be a branch forking to the right from
+the end of the first branch that forked left off the trunk.}
+\item{\code{lengths}}{A vector of branch lengths corresponding to the
+elements of \code{branches}. Should be the same length as \code{branches}.}}}
 
 \item{angle}{The angle of branches relative to their parent branch (or
 relative to the trunk). This angle is negated for left-pointing branches.}
@@ -30,10 +31,10 @@ relative to the trunk). This angle is negated for left-pointing branches.}
 for successive child branches, to a minimum of 1.}
 
 \item{left}{The character used to represent left-turning branches in the
-\code{branches} vector (default is \code{'L'}).}
+\code{branches} vector (default is \code{'0'}). Must not be \code{'Y'}.}
 
 \item{right}{The character used to represent right-turning branches in the
-\code{branches} vector (default is \code{'R'}). This must not be \code{'L'}.}
+\code{branches} vector (default is \code{'1'}). Must not be \code{'Y'}.}
 
 \item{plot}{Should the tree be plotted? (logical).}
 
@@ -51,9 +52,9 @@ tree.
 # Motivating example from http://stackoverflow.com/q/28163979/489704.
 # Pass a named list (describing the seed) to germinate.
 germinate(list(trunk.height=32,
-               branches=c(1,2,11,12,121, 122),
+               branches=c('0', '1', '00', '01', '010', '011'),
                lengths=c(21, 19, 5, 12, 6, 2)),
-          left='1', right='2', angle=40)
+          left='0', right='1', angle=40)
 
 # Or simulate a seed and pass it directly to germinate
 s <- seed(50, 10, min.branch.length=0, max.branch.length=5,
@@ -68,7 +69,7 @@ plot(g, trunk.width=15, col='peachpuff4')
 # In addition to the mighty oaks above, you might also like to germinate a
 #  clumpy grassy-type thing
 s <- seed(60, 15, min.branch.length=0, max.branch.length=5,
-             min.trunk.height=0, max.trunk.height=0)
+          min.trunk.height=0, max.trunk.height=0)
 g <- germinate(s, angle=5, trunk.width=10)
 }
 \seealso{

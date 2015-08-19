@@ -34,7 +34,7 @@ If \code{xy} is \code{TRUE}, a \code{data.frame} containing the branch
 }
 \description{
 Spring has sprung. Trees look dead if they don't have leaves, so enfoliate
-them. Or, if you prefer, add squirrels and or nuts.
+them.
 }
 \examples{
 # Make a seed

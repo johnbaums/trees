@@ -1,10 +1,11 @@
 Package: trees
 Type: Package
-Title: Generation and Plotting of Tree Structures
-Version: 0.1.1.9000
-Date: 2015-06-01
-Authors@R: person("John", "Baumgartner", email = "johnbaums@gmail.com",
-                  role = c("aut", "cre"))
+Title: Plot Trees
+Version: 0.1.1.9001
+Authors@R: as.person(c(
+    "John Baumgartner <johnbaums@gmail.com> [aut, cre]", 
+    "Brodie Gaslam <brodie.gaslam@yahoo.com> [aut]"
+  ))
 Description: Generate and manipulate tree plots. Predefined tree structures can 
     be plotted, or random structures can be generated. Trees can be pruned to 
     remove one or more tiers of outer branches, and symbols can be plotted at 

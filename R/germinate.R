@@ -1,38 +1,38 @@
-#'Germinate a seed.
-#'
-#'Observe the miracle of life as your seed germinates and spews forth a glorious
-#'tree.
-#'
-#'@param x Either a \code{seed} object returned by \code{\link{seed}}, or a
-#'  named \code{list} containing: \describe{\item{\code{trunk.height}}{Exactly
-#'  how glorious will this tree be?} \item{\code{branches}}{A binary coded
-#'  vector of addresses of branches to be included. Branches can branch to the
-#'  left or the right from the end of the trunk, or from the end of another
-#'  branch included in \code{branches}. Elements of \code{branches} may only
-#'  contain the characters given in args \code{left} and \code{right}, and all
-#'  parent branches of each element must also be provided. E.g. if \code{left}
-#'  and \code{right} are \code{'0'} and \code{'1'}, respectively, then
-#'  \code{'0'} is the first branch to the left stemming from the top of the
-#'  trunk, while \code{'1'} is the first branch to the right, stemming from the
-#'  top of the trunk; \code{'01'} would be a branch forking to the right from
-#'  the end of the first branch that forked left off the trunk.}
-#'  \item{\code{lengths}}{A vector of branch lengths corresponding to the
-#'  elements of \code{branches}. Should be the same length as \code{branches}.}}
-#'@param angle The angle of branches relative to their parent branch (or 
-#'  relative to the trunk). This angle is negated for left-pointing branches.
-#'@param trunk.width The line width of the trunk. Widths are then scaled down 
-#'  for successive child branches, to a minimum of 1.
-#'@param left The character used to represent left-turning branches in the 
-#'  \code{branches} vector (default is \code{'0'}). Must not be \code{'Y'}.
-#'@param right The character used to represent right-turning branches in the 
-#'  \code{branches} vector (default is \code{'1'}). Must not be \code{'Y'}.
-#'@param plot Should the tree be plotted? (logical).
-#'@param ... Further arguments to \code{plot.plant}.
-#'@return a \code{plant} object, which is a \code{data.frame} comprising branch 
-#'  addresses, depths, lengths, angles, base coordinates, and tip coordinates.
-#'@seealso \code{\link{seed}} \code{\link{foliate}} \code{\link{prune}}
-#'@export
-#'@examples
+#' Germinate a seed.
+#' 
+#' Observe the miracle of life as your seed germinates and spews forth a glorious
+#' tree.
+#' 
+#' @param x Either a \code{seed} object returned by \code{\link{seed}}, or a
+#'   named \code{list} containing: \describe{\item{\code{trunk.height}}{Exactly
+#'   how glorious will this tree be?} \item{\code{branches}}{A binary coded
+#'   vector of addresses of branches to be included. Branches can branch to the
+#'   left or the right from the end of the trunk, or from the end of another
+#'   branch included in \code{branches}. Elements of \code{branches} may only
+#'   contain the characters given in args \code{left} and \code{right}, and all
+#'   parent branches of each element must also be provided. E.g. if \code{left}
+#'   and \code{right} are \code{'0'} and \code{'1'}, respectively, then
+#'   \code{'0'} is the first branch to the left stemming from the top of the
+#'   trunk, while \code{'1'} is the first branch to the right, stemming from the
+#'   top of the trunk; \code{'01'} would be a branch forking to the right from
+#'   the end of the first branch that forked left off the trunk.}
+#'   \item{\code{lengths}}{A vector of branch lengths corresponding to the
+#'   elements of \code{branches}. Should be the same length as \code{branches}.}}
+#' @param angle The angle of branches relative to their parent branch (or 
+#'   relative to the trunk). This angle is negated for left-pointing branches.
+#' @param trunk.width The line width of the trunk. Widths are then scaled down 
+#'   for successive child branches, to a minimum of 1.
+#' @param left The character used to represent left-turning branches in the 
+#'   \code{branches} vector (default is \code{'0'}). Must not be \code{'Y'}.
+#' @param right The character used to represent right-turning branches in the 
+#'   \code{branches} vector (default is \code{'1'}). Must not be \code{'Y'}.
+#' @param plot Should the tree be plotted? (logical).
+#' @param ... Further arguments to \code{plot.plant}.
+#' @return a \code{plant} object, which is a \code{data.frame} comprising branch 
+#'   addresses, depths, lengths, angles, base coordinates, and tip coordinates.
+#' @seealso \code{\link{seed}} \code{\link{foliate}} \code{\link{prune}}
+#' @export
+#' @examples
 #' 
 #' # Motivating example from http://stackoverflow.com/q/28163979/489704.
 #' # Pass a named list (describing the seed) to germinate.

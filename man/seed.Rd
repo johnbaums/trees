@@ -25,7 +25,7 @@ Default is \code{10}.}
 }
 \value{
 a \code{seed} object containing \code{branches} and \code{lengths},
- and suitable for input to \code{\link{germinate}}.
+  and suitable for input to \code{\link{germinate}}.
 }
 \description{
 Generate a random seed whose DNA will shape its development upon germination.
@@ -35,6 +35,12 @@ s <- seed(50, 10, min.branch.length=0, max.branch.length=5,
          min.trunk.height=5, max.trunk.height=8)
 
 head(s)
+}
+\references{
+Random sampling of branch tips uses an approach described by
+  Stack Overflow user @brodieG posted
+  \href{http://stackoverflow.com/a/30781090/489704}{here} and available as a
+  Gist \href{https://gist.github.com/brodieG/7fecc0dcbc0cfa53a76a}{here}.
 }
 \seealso{
 \code{\link{germinate}}

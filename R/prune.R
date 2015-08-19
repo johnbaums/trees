@@ -1,16 +1,16 @@
-#'Prune a plant.
-#'
-#'If your plant is out of control and you have a bit of time on the weekend, get
-#'out the secateurs and tidy up the garden.
-#'
-#'@param x A \code{plant} as returned by \code{\link{germinate}}.
-#'@param intensity The pruning depth. Default is \code{1}.
-#'@param ... Further arguments to \code{plot.plant}.
-#'@return a modified \code{plant} object with the outermost \code{intensity}
-#'  stems hacked off.
-#'@seealso \code{\link{germinate}}
-#'@export
-#'@examples
+#' Prune a plant.
+#' 
+#' If your plant is out of control and you have a bit of time on the weekend, get
+#' out the secateurs and tidy up the garden.
+#' 
+#' @param x A \code{plant} as returned by \code{\link{germinate}}.
+#' @param intensity The pruning depth. Default is \code{1}.
+#' @param ... Further arguments to \code{plot.plant}.
+#' @return a modified \code{plant} object with the outermost \code{intensity}
+#'   stems hacked off.
+#' @seealso \code{\link{germinate}}
+#' @export
+#' @examples
 #' s <- seed(50, 10, min.branch.length=0, max.branch.length=5,
 #'           min.trunk.height=5, max.trunk.height=8)
 #' g <- germinate(s, col='navajowhite4')

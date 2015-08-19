@@ -1,22 +1,25 @@
-#'Generate random seeds.
-#'
-#'Generate a random seed whose DNA will shape its development upon germination.
-#'
-#'@param n A measure of branchiness. How many terminal branches will this seed 
-#'  produce?
-#'@param max.depth How deep will the hierarchy of branches be?
-#'@param min.trunk.height How short might the trunk be? Default is \code{10}.
-#'@param max.trunk.height How tall might the trunk be? Default is \code{30}.
-#'@param min.branch.length How short might each branch (branch segment) be?
-#'  Default is \code{3}.
-#'@param max.branch.length How long might each branch (branch segment) be?
-#'  Default is \code{10}.
-#'@return a \code{seed} object containing \code{branches} and \code{lengths}, 
-#'  and suitable for input to \code{\link{germinate}}.
-#'@seealso \code{\link{germinate}}
-#'@export
-#'@examples
+#' Generate random seeds.
 #' 
+#' Generate a random seed whose DNA will shape its development upon germination.
+#' 
+#' @param n A measure of branchiness. How many terminal branches will this seed 
+#'   produce?
+#' @param max.depth How deep will the hierarchy of branches be?
+#' @param min.trunk.height How short might the trunk be? Default is \code{10}.
+#' @param max.trunk.height How tall might the trunk be? Default is \code{30}.
+#' @param min.branch.length How short might each branch (branch segment) be?
+#'   Default is \code{3}.
+#' @param max.branch.length How long might each branch (branch segment) be?
+#'   Default is \code{10}.
+#' @return a \code{seed} object containing \code{branches} and \code{lengths}, 
+#'   and suitable for input to \code{\link{germinate}}.
+#' @references Random sampling of branch tips uses an approach described by 
+#'   Stack Overflow user @@brodieG (Brodie Gaslam) posted 
+#'   \href{http://stackoverflow.com/a/30781090/489704}{here} and available as a 
+#'   Gist \href{https://gist.github.com/brodieG/7fecc0dcbc0cfa53a76a}{here}.
+#' @seealso \code{\link{germinate}}
+#' @export
+#' @examples
 #' s <- seed(50, 10, min.branch.length=0, max.branch.length=5, 
 #'          min.trunk.height=5, max.trunk.height=8)
 #'          

@@ -157,3 +157,12 @@ fertilise <- function(size, n) {
   res.raw <- matrix(as.integer(intToBits(res[, 1L])), nrow=32L)[seq.rev, ]
   substr(do.call(paste0, split(res.raw, row(res.raw))), 0L, size - res[, 2L])
 }
+
+
+# Calculate x and y coordinates in a cartesian plane, given distance and angle 
+# from a given origin.
+get.xy <- function(a, d, x0, y0) {
+  a <- ifelse(a <= 90, 90 - a, 450 - a)
+  data.frame(x = x0 + d * cos(a / 180 * pi), 
+             y = y0 + d * sin(a / 180 * pi))
+}

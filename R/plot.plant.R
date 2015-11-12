@@ -8,7 +8,11 @@
 #' @return \code{NULL}
 #' @seealso \code{\link{germinate}}
 #' @export
-plot.plant <- function(x, trunk.width=20, ...) {
-  plot(c(x$x0, x$x1), c(x$y0, x$y1), type='n', asp=1, axes=FALSE, xlab='', ylab='', ...)  
-  with(x, segments(x0, y0, x1, y1, lwd=pmax(trunk.width/nchar(x$branches), 1), ...))
+plot.plant <- function(x, trunk.width=20, add=FALSE, ...) {
+  if(isTRUE(add)) {
+    with(x, segments(x0, y0, x1, y1, lwd=pmax(trunk.width/nchar(x$branches), 1), ...))
+  } else {
+    plot(c(x$x0, x$x1), c(x$y0, x$y1), type='n', asp=1, axes=FALSE, xlab='', ylab='', ...)  
+    with(x, segments(x0, y0, x1, y1, lwd=pmax(trunk.width/nchar(x$branches), 1), ...)) 
+  }
 }

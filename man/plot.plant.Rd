@@ -4,7 +4,7 @@
 \alias{plot.plant}
 \title{Plot method for plant objects.}
 \usage{
-\method{plot}{plant}(x, trunk.width = 20, ...)
+\method{plot}{plant}(x, trunk.width = 20, add = FALSE, ...)
 }
 \arguments{
 \item{x}{The \code{plant} object to be plotted.}

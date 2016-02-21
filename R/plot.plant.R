@@ -4,6 +4,7 @@
 #' @param trunk.width The plotting line width for the trunk. Successive child
 #'   branches are plotted with increasingly finer \code{lwd}, to a minimum of
 #'   \code{1}.
+#' @param add If \code{TRUE}, the plant will be added to the current plot.
 #' @param ... Additional arguments passed to \code{plot} and \code{segments}.
 #' @return \code{NULL}
 #' @seealso \code{\link{germinate}}

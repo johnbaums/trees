@@ -69,9 +69,10 @@ germinate <- function(x, angle=20, trunk.width=20, left='0', right='1',
     stop('left and right must be single, distinct alphanumeric characters.')
   x$lengths <- x$lengths[order(x$branches)]
   x$branches <- sort(x$branches)
-  x$angles <- sapply(gsub(right, paste0('+', angle), 
-                          gsub(left, paste0('-', angle), x$branches)), 
-                     function(x) eval(parse(text=x)), USE.NAMES=FALSE)
+  x$angles <- sapply(sapply(x$branches, strsplit, ''), function(x) {
+    tab <- table(x)
+    sum(c(tab[left]*-angle, tab[right]*angle), na.rm=TRUE)
+  }, USE.NAMES=FALSE)
   y1 <- x1 <- y0 <- x0 <- rep(NA, length(x$branches))
   for (i in seq_len(length(x$branches))) {
     if(x$branches[i] %in% c(left, right)) {

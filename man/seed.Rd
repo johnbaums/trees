@@ -11,17 +11,17 @@ seed(n, max.depth, min.trunk.height = 10, max.trunk.height = 30,
 \item{n}{A measure of branchiness. How many terminal branches will this seed 
 produce?}
 
-\item{max.depth}{How deep will the hierarchy of branches be?}
+\item{max.depth}{How deep will the hierarchy of branches be? In the wild, 
+trees never have more than 25 tiers of branches, nor less than 3, so please 
+observe that law of nature.}
 
-\item{min.trunk.height}{How short might the trunk be? Default is \code{10}.}
+\item{min.trunk.height}{How short might the trunk be?}
 
-\item{max.trunk.height}{How tall might the trunk be? Default is \code{30}.}
+\item{max.trunk.height}{How tall might the trunk be?}
 
-\item{min.branch.length}{How short might each branch (branch segment) be?
-Default is \code{3}.}
+\item{min.branch.length}{How short might each segment be?}
 
-\item{max.branch.length}{How long might each branch (branch segment) be?
-Default is \code{10}.}
+\item{max.branch.length}{How long might each branch segment be?}
 }
 \value{
 a \code{seed} object containing \code{branches} and \code{lengths}, 

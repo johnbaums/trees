@@ -4,13 +4,13 @@
 #' 
 #' @param n A measure of branchiness. How many terminal branches will this seed 
 #'   produce?
-#' @param max.depth How deep will the hierarchy of branches be?
-#' @param min.trunk.height How short might the trunk be? Default is \code{10}.
-#' @param max.trunk.height How tall might the trunk be? Default is \code{30}.
-#' @param min.branch.length How short might each branch (branch segment) be?
-#'   Default is \code{3}.
-#' @param max.branch.length How long might each branch (branch segment) be?
-#'   Default is \code{10}.
+#' @param max.depth How deep will the hierarchy of branches be? In the wild, 
+#'   trees never have more than 25 tiers of branches, nor less than 3, so please 
+#'   observe that law of nature.
+#' @param min.trunk.height How short might the trunk be?
+#' @param max.trunk.height How tall might the trunk be?
+#' @param min.branch.length How short might each segment be?
+#' @param max.branch.length How long might each branch segment be?
 #' @return a \code{seed} object containing \code{branches} and \code{lengths}, 
 #'   and suitable for input to \code{\link{germinate}}.
 #' @references Random sampling of branch tips uses an approach described by 

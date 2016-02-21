@@ -88,7 +88,7 @@ germinate <- function(x, angle=20, trunk.width=20, left='0', right='1',
     y1[i] <- tip[, 2]
   }
   d <- data.frame(branches=x$branches, 
-                  depth=ifelse(x$branches==0, 0, nchar(x$branches)),
+                  depth=ifelse(x$branches=='Y', 0, nchar(x$branches)),
                   length=x$lengths,
                   angles=x$angles, x0, y0, x1, y1,
                   stringsAsFactors=FALSE)

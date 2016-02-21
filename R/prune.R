@@ -5,7 +5,9 @@
 #' 
 #' @param x A \code{plant} as returned by \code{\link{germinate}}.
 #' @param intensity The pruning depth. Default is \code{1}.
-#' @param ... Further arguments to \code{plot.plant}.
+#' @param plot Should the plant be plotted?
+#' @param ... Further arguments to \code{plot.plant} (ignored if \code{plot} is
+#'   \code{FALSE}).
 #' @return a modified \code{plant} object with the outermost \code{intensity}
 #'   stems hacked off.
 #' @seealso \code{\link{germinate}}

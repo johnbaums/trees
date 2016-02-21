@@ -1,7 +1,11 @@
+# These functions written by Brodie Gaslam (with minor modification by John
+# Baumgartner). <http://stackoverflow.com/a/30781090/489704>.
+
 fertilise <- function(size, n) {
   size <- as.integer(size)
   n <- as.integer(n)
-  if(size > 25 || size < 3L) stop("Size out of valid range")
+  if(size > 25L || size < 3L) stop("Size out of valid range. ",
+                                   "'max.depth' must be in the range [3, 25].")
   
   # Generate integer pool and weights
   
@@ -157,7 +161,6 @@ fertilise <- function(size, n) {
   res.raw <- matrix(as.integer(intToBits(res[, 1L])), nrow=32L)[seq.rev, ]
   substr(do.call(paste0, split(res.raw, row(res.raw))), 0L, size - res[, 2L])
 }
-
 
 # Calculate x and y coordinates in a cartesian plane, given distance and angle 
 # from a given origin.
